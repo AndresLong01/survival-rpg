@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://ceab5wbvdw2uc"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/main.gd" id="1_cvkaj"]
+[ext_resource type="PackedScene" uid="uid://uxcxpxba7kqr" path="res://Scenes/Characters/Player/Player.tscn" id="2_b14eu"]
+[ext_resource type="PackedScene" uid="uid://ctl83udb1arbg" path="res://Scenes/Environment/Terrains/BaseTerrain.tscn" id="2_bjpib"]
+[ext_resource type="PackedScene" uid="uid://bcm6re1mqssom" path="res://Scenes/Characters/Player/PlayerCamera/PlayerCamera.tscn" id="4_kmsi0"]
+[ext_resource type="Script" path="res://Resources/ItemResource/ItemResource.gd" id="4_mf8ka"]
+[ext_resource type="Texture2D" uid="uid://dhwcv8ob70s42" path="res://Assets/Items/Mining/PickaxeSprites/CopperPickaxe.png" id="5_cpouy"]
+[ext_resource type="PackedScene" uid="uid://dn0ne6vomterl" path="res://Scenes/Environment/DayNightCycle.tscn" id="7_snhg8"]
+
+[sub_resource type="Resource" id="Resource_bj6dc"]
+script = ExtResource("4_mf8ka")
+stat_type = 0
+sprite_texture = ExtResource("5_cpouy")
+animation_type = 0
+frequency = 2.0
+use_range = 1.0
+strength = 4.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_cvkaj")
+
+[node name="Background" type="ColorRect" parent="."]
+visible = false
+z_index = -100
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BaseTerrain" parent="." instance=ExtResource("2_bjpib")]
+
+[node name="Player" parent="." instance=ExtResource("2_b14eu")]
+equipped_item = SubResource("Resource_bj6dc")
+
+[node name="PlayerCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_kmsi0")]
+player = NodePath("../Player")
+
+[node name="DayNightCycle" parent="." instance=ExtResource("7_snhg8")]

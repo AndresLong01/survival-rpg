@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://crw25dg7gbfpk"]
+
+[ext_resource type="Script" path="res://Scenes/Components/Mining/Controller/MiningToolController.gd" id="1_f5tdg"]
+[ext_resource type="PackedScene" uid="uid://dmi6k4ph5mqg7" path="res://Scenes/Components/Mining/MiningTool.tscn" id="2_ekx06"]
+
+[node name="MiningToolController" type="Node"]
+script = ExtResource("1_f5tdg")
+mining_tool = ExtResource("2_ekx06")
+
+[node name="Timer" type="Timer" parent="."]

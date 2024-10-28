@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d05df7osq5sil"]
+
+[ext_resource type="PackedScene" uid="uid://uxcxpxba7kqr" path="res://Scenes/Characters/Player/Player.tscn" id="1_iaweb"]
+[ext_resource type="PackedScene" uid="uid://bcm6re1mqssom" path="res://Scenes/Characters/Player/PlayerCamera/PlayerCamera.tscn" id="2_npx6v"]
+
+[node name="TileDemo" type="Node2D"]
+
+[node name="Backgrounds" type="TileMapLayer" parent="."]
+
+[node name="Terrain" type="TileMapLayer" parent="."]
+
+[node name="Destruction" type="TileMapLayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_iaweb")]
+
+[node name="PlayerCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_npx6v")]
+player = NodePath("../Player")

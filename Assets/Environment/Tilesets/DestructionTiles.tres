@@ -1,0 +1,22 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://btu3gqptqangd"]
+
+[ext_resource type="Texture2D" uid="uid://cpc05qv2jyw4g" path="res://Assets/Environment/Tiles/Destruction/light-destruction.png" id="1_ka5sq"]
+[ext_resource type="Texture2D" uid="uid://cbsgukokqqu1p" path="res://Assets/Environment/Tiles/Destruction/medium-destruction.png" id="2_c5lsk"]
+[ext_resource type="Texture2D" uid="uid://bissrhu8kghiq" path="res://Assets/Environment/Tiles/Destruction/heavy-destruction.png" id="3_hco1h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oso3"]
+texture = ExtResource("1_ka5sq")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6l0s"]
+texture = ExtResource("2_c5lsk")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgxim"]
+texture = ExtResource("3_hco1h")
+0:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_8oso3")
+sources/1 = SubResource("TileSetAtlasSource_n6l0s")
+sources/2 = SubResource("TileSetAtlasSource_wgxim")

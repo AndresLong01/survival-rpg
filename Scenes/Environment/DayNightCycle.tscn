@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn0ne6vomterl"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/DayNightCycle.gd" id="1_lmfp7"]
+
+[node name="DayNightCycle" type="Node2D"]
+visible = false
+script = ExtResource("1_lmfp7")
+
+[node name="AmbientLight" type="DirectionalLight2D" parent="."]
+rotation = -0.261799
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+height = 0.47
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.9, 0.65, 0.35, 1)

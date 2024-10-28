@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctl83udb1arbg"]
+
+[ext_resource type="TileSet" uid="uid://bl7l78yhi0wkq" path="res://Assets/Environment/Tilesets/BaseTerrain.tres" id="1_n6b8f"]
+[ext_resource type="Script" path="res://Scenes/Environment/Terrains/BaseTerrain.gd" id="2_4i7k5"]
+[ext_resource type="TileSet" uid="uid://btu3gqptqangd" path="res://Assets/Environment/Tilesets/DestructionTiles.tres" id="3_ltylx"]
+
+[node name="BaseTerrain" type="TileMapLayer" node_paths=PackedStringArray("destruction_tile_map") groups=["Blocks"]]
+tile_set = ExtResource("1_n6b8f")
+script = ExtResource("2_4i7k5")
+destruction_tile_map = NodePath("DestructionTiles")
+
+[node name="DestructionTiles" type="TileMapLayer" parent="."]
+tile_set = ExtResource("3_ltylx")

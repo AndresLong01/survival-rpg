@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://ceab5wbvdw2uc"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/main.gd" id="1_cvkaj"]
+[ext_resource type="PackedScene" uid="uid://uxcxpxba7kqr" path="res://Scenes/Characters/Player/Player.tscn" id="2_b14eu"]
+[ext_resource type="TileSet" uid="uid://bl7l78yhi0wkq" path="res://Assets/Environment/Tilesets/Main.tres" id="2_rsykc"]
+[ext_resource type="PackedScene" uid="uid://bcm6re1mqssom" path="res://Scenes/Characters/Player/PlayerCamera/PlayerCamera.tscn" id="4_kmsi0"]
+[ext_resource type="Script" path="res://Resources/ItemResource/ItemResource.gd" id="4_mf8ka"]
+[ext_resource type="Texture2D" uid="uid://dhwcv8ob70s42" path="res://Assets/Items/Mining/PickaxeSprites/CopperPickaxe.png" id="5_cpouy"]
+[ext_resource type="Script" path="res://Scenes/Levels/DayNightCycle.gd" id="5_qfe0d"]
+
+[sub_resource type="Resource" id="Resource_bj6dc"]
+script = ExtResource("4_mf8ka")
+stat_type = 0
+sprite_texture = ExtResource("5_cpouy")
+animation_type = 0
+frequency = 2.0
+use_range = 1.0
+strength = 4.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_cvkaj")
+
+[node name="Background" type="ColorRect" parent="."]
+visible = false
+z_index = -100
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["Blocks"]]
+tile_set = ExtResource("2_rsykc")
+
+[node name="Player" parent="." instance=ExtResource("2_b14eu")]
+equipped_item = SubResource("Resource_bj6dc")
+
+[node name="PlayerCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_kmsi0")]
+player = NodePath("../Player")
+
+[node name="DayNightCycle" type="Node2D" parent="."]
+visible = false
+script = ExtResource("5_qfe0d")
+
+[node name="AmbientLight" type="DirectionalLight2D" parent="DayNightCycle"]
+rotation = -0.261799
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 0.5
+height = 0.47
+
+[node name="CanvasModulate" type="CanvasModulate" parent="DayNightCycle"]
+color = Color(0.9, 0.65, 0.35, 1)
