@@ -2,13 +2,13 @@ extends Camera2D
 
 @export var player: Player
 
-const MIN_ZOOM: float = 1.75
+const MIN_ZOOM: float = 1.4
 
 var target_position := Vector2.ZERO
 
 func _ready() -> void:
 	make_current()
-	offset.y = -40.0
+	offset.y = -120.0
 	zoom = Vector2(MIN_ZOOM, MIN_ZOOM)
 
 func _physics_process(delta: float) -> void:

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://xyyt8votqkrx"]
+
+[ext_resource type="Script" path="res://Scenes/UI/Hotbar/HotbarSlot.gd" id="1_ej4y4"]
+[ext_resource type="Texture2D" uid="uid://70d25x2leimp" path="res://Assets/GUI/GUI Sections/ContainerBrown.png" id="1_kkn05"]
+[ext_resource type="Texture2D" uid="uid://b6hkgnni5r3tp" path="res://Assets/GUI/GUI Sections/Container.png" id="2_ajdw3"]
+
+[node name="HotbarSlot" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ej4y4")
+
+[node name="Selected" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kkn05")
+
+[node name="Hotbar" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 36.0
+offset_bottom = 36.0
+texture = ExtResource("2_ajdw3")
+
+[node name="ItemSprite" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 32.0
+offset_bottom = 32.0

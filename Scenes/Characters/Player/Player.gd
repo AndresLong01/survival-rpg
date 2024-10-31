@@ -4,7 +4,7 @@ class_name Player
 @export var equipped_item: ItemResource
 
 #region Ground State
-const MAX_SPEED: float = 300.0
+const MAX_SPEED: float = 200.0
 const ACCELERATION: float = 12.5
 
 var can_apply_movement: bool = true
@@ -56,3 +56,6 @@ func toggle_horizontal_input(state: bool) -> void:
 
 func toggle_ignore_sprite_flip(state: bool) -> void:
 	ignore_sprite_flip = state
+
+func set_equipped_item(item: ItemResource) -> void:
+	equipped_item = item

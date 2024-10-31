@@ -12,7 +12,7 @@ func check_for_jump_input() -> void:
 		Transitioned.emit("jump")
 
 func check_for_primary_action_input() -> void:
-	if Input.is_action_just_pressed(GameConstants.INPUT_PRIMARY):
+	if Input.is_action_just_pressed(GameConstants.INPUT_PRIMARY)  or Input.is_action_pressed(GameConstants.INPUT_PRIMARY):
 		Transitioned.emit("primary")
 
 #func check_for_dash_input() -> void:

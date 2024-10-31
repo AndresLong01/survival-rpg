@@ -29,3 +29,47 @@ const INPUT_RIGHT: String = "Right"
 const INPUT_JUMP: String = "Jump"
 const INPUT_DASH: String = "Dash"
 const INPUT_PRIMARY: String = "Primary"
+const INPUT_HOTBAR: String = "Hotbar"
+const INPUT_SCROLL_UP: String = "ScrollUp"
+const INPUT_SCROLL_DOWN: String = "ScrollDown"
+
+#region Custom Resources
+var copper_pickaxe: ItemResource = ItemResource.new().setup({
+	"item_type": ItemResource.ItemType.Mining,
+	"sprite_texture": preload("res://Assets/Items/Mining/PickaxeSprites/CopperPickaxe.png"),
+	"animation_type": ItemResource.Animations.Swing,
+	"frequency": 2.0,
+	"use_range": 1.0,
+	"strength": 4,
+})
+
+var stone_pickaxe: ItemResource = ItemResource.new().setup({
+	"item_type": ItemResource.ItemType.Mining,
+	"sprite_texture": preload("res://Assets/Items/Mining/PickaxeSprites/StonePickaxe.png"),
+	"animation_type": ItemResource.Animations.Swing,
+	"frequency": 1.0,
+	"use_range": 1.0,
+	"strength": 2,
+})
+
+var diamond_pickaxe: ItemResource = ItemResource.new().setup({
+	"item_type": ItemResource.ItemType.Mining,
+	"sprite_texture": preload("res://Assets/Items/Mining/PickaxeSprites/DiamondPickaxe.png"),
+	"animation_type": ItemResource.Animations.Swing,
+	"frequency": 4.0,
+	"use_range": 1.0,
+	"strength": 9,
+})
+
+var test_hotbar_inventory: Array[ItemResource] = [
+	stone_pickaxe,
+	ItemResource.new().setup_empty(),
+	ItemResource.new().setup_empty(),
+	copper_pickaxe,
+	ItemResource.new().setup_empty(),
+	ItemResource.new().setup_empty(),
+	ItemResource.new().setup_empty(),
+	diamond_pickaxe,
+	ItemResource.new().setup_empty(),
+]
+#endregion

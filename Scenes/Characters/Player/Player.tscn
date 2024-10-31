@@ -1,10 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://uxcxpxba7kqr"]
+[gd_scene load_steps=27 format=3 uid="uid://uxcxpxba7kqr"]
 
 [ext_resource type="Script" path="res://Scenes/Characters/Player/Player.gd" id="1_5q0od"]
 [ext_resource type="Texture2D" uid="uid://b5ftu46o3kfj4" path="res://Assets/Characters/Player/Spritesheet/Player Idle 48x48.png" id="1_sa7ji"]
 [ext_resource type="Script" path="res://Resources/StatResource/StatResource.gd" id="2_ead3x"]
+[ext_resource type="PackedScene" uid="uid://bw8kri076ca6n" path="res://Scenes/UI/AttributeGauges/AttributeGauges.tscn" id="3_06vxn"]
 [ext_resource type="Script" path="res://Scenes/Characters/FSM.gd" id="3_80qhh"]
 [ext_resource type="Texture2D" uid="uid://c6aoqf67l2m0i" path="res://Resources/Textures/PlayerIdle.tres" id="4_0dxd7"]
+[ext_resource type="PackedScene" uid="uid://ba2p4ycuq5gof" path="res://Scenes/UI/Hotbar/Hotbar.tscn" id="4_4adbo"]
 [ext_resource type="Script" path="res://Scenes/Characters/Player/States/Idle.gd" id="4_ry63l"]
 [ext_resource type="Script" path="res://Scenes/Characters/Player/States/Jump.gd" id="5_1w8kj"]
 [ext_resource type="Texture2D" uid="uid://c5qedvv2r1tsp" path="res://Resources/Textures/PlayerMove.tres" id="5_b5kbj"]
@@ -415,6 +417,13 @@ stats = Array[ExtResource("2_ead3x")]([SubResource("Resource_i2isj"), SubResourc
 sprite = NodePath("Sprite2D")
 animation_player = NodePath("AnimationPlayer")
 hurtbox = NodePath("Hurtbox")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="AttributeGauges" parent="UI" instance=ExtResource("3_06vxn")]
+
+[node name="Hotbar" parent="UI" node_paths=PackedStringArray("player") instance=ExtResource("4_4adbo")]
+player = NodePath("../..")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_sa7ji")

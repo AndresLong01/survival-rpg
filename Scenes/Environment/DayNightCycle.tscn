@@ -1,10 +1,20 @@
 [gd_scene load_steps=2 format=3 uid="uid://dn0ne6vomterl"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/DayNightCycle.gd" id="1_lmfp7"]
+[ext_resource type="Script" path="res://Scenes/Environment/DayNightCycle.gd" id="1_lmfp7"]
 
 [node name="DayNightCycle" type="Node2D"]
 visible = false
 script = ExtResource("1_lmfp7")
+
+[node name="DynamicBackground" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="ColorRect" parent="DynamicBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="AmbientLight" type="DirectionalLight2D" parent="."]
 rotation = -0.261799

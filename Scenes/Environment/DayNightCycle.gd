@@ -2,12 +2,12 @@ extends Node2D
 
 @export var DAY_DURATION: float = 480.0  # Duration of a full day in seconds
 @export var NIGHT_COLOR: Color = Color(0.15, 0.15, 0.25, 1.0)
-@export var DAY_COLOR: Color = Color(0.75, 0.85, 0.75, 0.8)
-@export var SUN_COLOR: Color = Color(0.8, 0.65, 0.35, 0.6)
+@export var DAY_COLOR: Color = Color(0.75, 0.85, 0.75, 1.0)
+@export var SUN_COLOR: Color = Color(0.8, 0.65, 0.35, 1.0)
 
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 @onready var ambient_light: DirectionalLight2D = $AmbientLight
-@onready var background: ColorRect = $"../Background"
+@onready var background: ColorRect = $DynamicBackground/Background
 
 var time_elapsed: float = 240.0
 

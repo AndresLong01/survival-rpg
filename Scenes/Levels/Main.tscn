@@ -10,25 +10,15 @@
 
 [sub_resource type="Resource" id="Resource_bj6dc"]
 script = ExtResource("4_mf8ka")
-stat_type = 0
+item_type = 0
 sprite_texture = ExtResource("5_cpouy")
 animation_type = 0
-frequency = 2.0
+frequency = 2.5
 use_range = 1.0
-strength = 4.0
+strength = 2.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_cvkaj")
-
-[node name="Background" type="ColorRect" parent="."]
-visible = false
-z_index = -100
-custom_minimum_size = Vector2(1920, 1080)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="BaseTerrain" parent="." instance=ExtResource("2_bjpib")]
 
