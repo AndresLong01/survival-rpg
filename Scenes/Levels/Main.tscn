@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceab5wbvdw2uc"]
+[gd_scene load_steps=10 format=3 uid="uid://ceab5wbvdw2uc"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/main.gd" id="1_cvkaj"]
 [ext_resource type="PackedScene" uid="uid://uxcxpxba7kqr" path="res://Scenes/Characters/Player/Player.tscn" id="2_b14eu"]
 [ext_resource type="PackedScene" uid="uid://ctl83udb1arbg" path="res://Scenes/Environment/Terrains/BaseTerrain.tscn" id="2_bjpib"]
+[ext_resource type="PackedScene" uid="uid://cywkcvsjxyc1d" path="res://Scenes/Environment/Terrains/BaseTerrainParallax.tscn" id="2_cvrmw"]
 [ext_resource type="PackedScene" uid="uid://bcm6re1mqssom" path="res://Scenes/Characters/Player/PlayerCamera/PlayerCamera.tscn" id="4_kmsi0"]
 [ext_resource type="Script" path="res://Resources/ItemResource/ItemResource.gd" id="4_mf8ka"]
 [ext_resource type="Texture2D" uid="uid://dhwcv8ob70s42" path="res://Assets/Items/Mining/PickaxeSprites/CopperPickaxe.png" id="5_cpouy"]
@@ -19,6 +20,9 @@ strength = 2.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_cvkaj")
+
+[node name="BaseTerrainParallax" parent="." instance=ExtResource("2_cvrmw")]
+position = Vector2(960, 512)
 
 [node name="BaseTerrain" parent="." instance=ExtResource("2_bjpib")]
 

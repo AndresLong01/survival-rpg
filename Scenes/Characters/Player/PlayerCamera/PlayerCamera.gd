@@ -8,7 +8,7 @@ var target_position := Vector2.ZERO
 
 func _ready() -> void:
 	make_current()
-	offset.y = -120.0
+	offset.y = -64.0
 	zoom = Vector2(MIN_ZOOM, MIN_ZOOM)
 
 func _physics_process(delta: float) -> void:

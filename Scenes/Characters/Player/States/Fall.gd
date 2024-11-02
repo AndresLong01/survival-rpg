@@ -12,6 +12,7 @@ func enter() -> void:
 
 func update(_delta: float) -> void:
 	check_for_primary_action_input()
+	check_for_jump_input()
 	#check_for_dash_input()
 
 func physics_update(delta: float) -> void:

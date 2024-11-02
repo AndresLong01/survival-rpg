@@ -27,5 +27,5 @@ func _manage_hp_tracker(tile_pos: Vector2, tile_hp: float, calculated_hp: float)
 			destruction_tile_map.set_cell(tile_pos, TileIds.DestructionTiles.LIGHT, Vector2i(0,0))
 		elif percent_damage < 60.0:
 			destruction_tile_map.set_cell(tile_pos, TileIds.DestructionTiles.MEDIUM, Vector2i(0,0))
-		elif percent_damage < 90.0:
+		elif percent_damage < 100.0:
 			destruction_tile_map.set_cell(tile_pos, TileIds.DestructionTiles.HEAVY, Vector2i(0,0))

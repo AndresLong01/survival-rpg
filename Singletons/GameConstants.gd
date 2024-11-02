@@ -58,18 +58,18 @@ var diamond_pickaxe: ItemResource = ItemResource.new().setup({
 	"animation_type": ItemResource.Animations.Swing,
 	"frequency": 4.0,
 	"use_range": 1.0,
-	"strength": 9,
+	"strength": 20,
 })
 
 var test_hotbar_inventory: Array[ItemResource] = [
-	stone_pickaxe,
+	diamond_pickaxe,
 	ItemResource.new().setup_empty(),
 	ItemResource.new().setup_empty(),
 	copper_pickaxe,
 	ItemResource.new().setup_empty(),
 	ItemResource.new().setup_empty(),
 	ItemResource.new().setup_empty(),
-	diamond_pickaxe,
+	stone_pickaxe,
 	ItemResource.new().setup_empty(),
 ]
 #endregion

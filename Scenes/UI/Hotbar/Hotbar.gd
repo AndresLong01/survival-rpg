@@ -39,7 +39,7 @@ func _change_selected(index: int) -> void:
 	if index < 0 or index >= h_box_container.get_child_count():
 		push_warning("Invalid hotbar index: %d" % index)
 		return
-	 
+	
 	hotbar_slots[current_selected_bar].remove_as_selected()
 	hotbar_slots[index].select_as_current()
 	

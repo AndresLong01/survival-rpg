@@ -1,58 +1,14 @@
-[gd_scene load_steps=10 format=4 uid="uid://d05df7osq5sil"]
+[gd_scene load_steps=6 format=4 uid="uid://d05df7osq5sil"]
 
-[ext_resource type="Texture2D" uid="uid://d27yywn0i6osb" path="res://Assets/Environment/Backgrounds/BaseTerrain/TF_bg5.png" id="1_1jwep"]
+[ext_resource type="PackedScene" uid="uid://cywkcvsjxyc1d" path="res://Scenes/Environment/Terrains/BaseTerrainParallax.tscn" id="1_07pmd"]
 [ext_resource type="PackedScene" uid="uid://uxcxpxba7kqr" path="res://Scenes/Characters/Player/Player.tscn" id="1_iaweb"]
 [ext_resource type="TileSet" uid="uid://bl7l78yhi0wkq" path="res://Assets/Environment/Tilesets/BaseTerrain.tres" id="1_rt5ps"]
 [ext_resource type="PackedScene" uid="uid://bcm6re1mqssom" path="res://Scenes/Characters/Player/PlayerCamera/PlayerCamera.tscn" id="2_npx6v"]
-[ext_resource type="Texture2D" uid="uid://rfsgduko205q" path="res://Assets/Environment/Backgrounds/BaseTerrain/TF_bg4.png" id="2_o34i3"]
-[ext_resource type="Texture2D" uid="uid://b02kek1kxw8vy" path="res://Assets/Environment/Backgrounds/BaseTerrain/TF_bg3.png" id="3_q0jok"]
-[ext_resource type="Texture2D" uid="uid://sshu6hb5wq8n" path="res://Assets/Environment/Backgrounds/BaseTerrain/TF_bg2.png" id="4_jw7u1"]
 [ext_resource type="PackedScene" uid="uid://dn0ne6vomterl" path="res://Scenes/Environment/DayNightCycle.tscn" id="4_mv001"]
-[ext_resource type="Texture2D" uid="uid://rdn2jx3gkwkg" path="res://Assets/Environment/Backgrounds/BaseTerrain/TF_bg1.png" id="5_6bm1t"]
 
 [node name="TileDemo" type="Node2D"]
 
-[node name="BaseTerrainParallax" type="Node2D" parent="."]
-position = Vector2(960, -360)
-
-[node name="Parallax2D" type="Parallax2D" parent="BaseTerrainParallax"]
-scroll_scale = Vector2(0.2, 1)
-repeat_size = Vector2(1920, 0)
-repeat_times = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="BaseTerrainParallax/Parallax2D"]
-texture = ExtResource("1_1jwep")
-
-[node name="Parallax2D2" type="Parallax2D" parent="BaseTerrainParallax"]
-scroll_scale = Vector2(0.4, 1)
-repeat_size = Vector2(1920, 0)
-repeat_times = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="BaseTerrainParallax/Parallax2D2"]
-texture = ExtResource("2_o34i3")
-
-[node name="Parallax2D3" type="Parallax2D" parent="BaseTerrainParallax"]
-scroll_scale = Vector2(0.6, 1)
-repeat_size = Vector2(1920, 0)
-repeat_times = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="BaseTerrainParallax/Parallax2D3"]
-texture = ExtResource("3_q0jok")
-
-[node name="Parallax2D4" type="Parallax2D" parent="BaseTerrainParallax"]
-scroll_scale = Vector2(0.6, 1)
-repeat_size = Vector2(1920, 0)
-repeat_times = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="BaseTerrainParallax/Parallax2D4"]
-texture = ExtResource("4_jw7u1")
-
-[node name="Parallax2D5" type="Parallax2D" parent="BaseTerrainParallax"]
-repeat_size = Vector2(1920, 0)
-repeat_times = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="BaseTerrainParallax/Parallax2D5"]
-texture = ExtResource("5_6bm1t")
+[node name="BaseTerrainParallax" parent="." instance=ExtResource("1_07pmd")]
 
 [node name="Backgrounds" type="TileMapLayer" parent="."]
 
@@ -69,4 +25,4 @@ player = NodePath("../Player")
 
 [node name="DayNightCycle" parent="." instance=ExtResource("4_mv001")]
 visible = true
-DAY_DURATION = 20.0
+DAY_COLOR = Color(0.798112, 0.823435, 0.822379, 1)

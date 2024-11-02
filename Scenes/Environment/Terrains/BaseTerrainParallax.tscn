@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://cywkcvsjxyc1d"]
+
+[ext_resource type="Texture2D" uid="uid://sesas8xxwrra" path="res://Assets/Environment/Backgrounds/BaseTerrain/bg_TF1.png" id="1_klm1s"]
+[ext_resource type="Texture2D" uid="uid://b4bv4osqcp5um" path="res://Assets/Environment/Backgrounds/BaseTerrain/bg_TF2.png" id="2_7pbwn"]
+[ext_resource type="Texture2D" uid="uid://daoyf4jdvlyip" path="res://Assets/Environment/Backgrounds/BaseTerrain/bg_TF3.png" id="3_wtdj1"]
+[ext_resource type="Texture2D" uid="uid://dkm1wwgwoj5rs" path="res://Assets/Environment/Backgrounds/BaseTerrain/bg_TF4.png" id="4_1i1mq"]
+[ext_resource type="Texture2D" uid="uid://dwg2ikc6q53q5" path="res://Assets/Environment/Backgrounds/BaseTerrain/bg_TF5.png" id="5_kaanj"]
+[ext_resource type="Texture2D" uid="uid://bvckr1aiajqj" path="res://Assets/Environment/Backgrounds/BaseTerrain/bg_TF6.png" id="6_rrjp3"]
+
+[node name="BaseTerrainParallax" type="Node2D"]
+position = Vector2(960, 0)
+
+[node name="Mountains" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountains"]
+texture = ExtResource("1_klm1s")
+
+[node name="DistantHills" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="DistantHills"]
+texture = ExtResource("2_7pbwn")
+
+[node name="ForestHills" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestHills"]
+texture = ExtResource("3_wtdj1")
+
+[node name="Forest" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.6, 1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Forest"]
+texture = ExtResource("4_1i1mq")
+
+[node name="ForestTreeline" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestTreeline"]
+texture = ExtResource("5_kaanj")
+
+[node name="ForestTrees" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ForestTrees"]
+texture = ExtResource("6_rrjp3")
